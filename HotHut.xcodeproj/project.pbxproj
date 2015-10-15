@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5DE746485C78E4990974D6CC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B3B73A841B29E46AF2B67B /* libPods.a */; };
+		A3AA0BAE1BCF94B90040D6F8 /* HutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AA0BAD1BCF94B90040D6F8 /* HutsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A3AA0BB31BCF9A190040D6F8 /* HutsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AA0BB11BCF9A190040D6F8 /* HutsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		A3AA0BB41BCF9A190040D6F8 /* HutsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3AA0BB21BCF9A190040D6F8 /* HutsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		A3C247631BCF1EC500196AFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C247621BCF1EC500196AFA /* AppDelegate.swift */; };
 		A3C247651BCF1EC500196AFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C247641BCF1EC500196AFA /* ViewController.swift */; };
 		A3C247681BCF1EC500196AFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C247661BCF1EC500196AFA /* Main.storyboard */; };
@@ -36,6 +39,10 @@
 
 /* Begin PBXFileReference section */
 		50B3B73A841B29E46AF2B67B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3AA0BAA1BCF73A40040D6F8 /* HotHut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HotHut-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		A3AA0BAD1BCF94B90040D6F8 /* HutsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HutsTableViewController.swift; path = ../HutsTableViewController.swift; sourceTree = "<group>"; };
+		A3AA0BB11BCF9A190040D6F8 /* HutsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HutsTableViewCell.swift; sourceTree = "<group>"; };
+		A3AA0BB21BCF9A190040D6F8 /* HutsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HutsTableViewCell.xib; sourceTree = "<group>"; };
 		A3C2475F1BCF1EC500196AFA /* HotHut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotHut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C247621BCF1EC500196AFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3C247641BCF1EC500196AFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +120,10 @@
 		A3C247611BCF1EC500196AFA /* HotHut */ = {
 			isa = PBXGroup;
 			children = (
+				A3AA0BB11BCF9A190040D6F8 /* HutsTableViewCell.swift */,
+				A3AA0BB21BCF9A190040D6F8 /* HutsTableViewCell.xib */,
+				A3AA0BAD1BCF94B90040D6F8 /* HutsTableViewController.swift */,
+				A3AA0BAA1BCF73A40040D6F8 /* HotHut-Bridging-Header.h */,
 				A3C247621BCF1EC500196AFA /* AppDelegate.swift */,
 				A3C247641BCF1EC500196AFA /* ViewController.swift */,
 				A3C247661BCF1EC500196AFA /* Main.storyboard */,
@@ -214,6 +225,7 @@
 		A3C247571BCF1EC500196AFA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = com.ching;
 				TargetAttributes = {
@@ -259,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C2476D1BCF1EC500196AFA /* LaunchScreen.storyboard in Resources */,
+				A3AA0BB41BCF9A190040D6F8 /* HutsTableViewCell.xib in Resources */,
 				A3C2476A1BCF1EC500196AFA /* Assets.xcassets in Resources */,
 				A3C247681BCF1EC500196AFA /* Main.storyboard in Resources */,
 			);
@@ -334,7 +347,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C247651BCF1EC500196AFA /* ViewController.swift in Sources */,
+				A3AA0BB31BCF9A190040D6F8 /* HutsTableViewCell.swift in Sources */,
 				A3C247631BCF1EC500196AFA /* AppDelegate.swift in Sources */,
+				A3AA0BAE1BCF94B90040D6F8 /* HutsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,10 +492,13 @@
 			baseConfigurationReference = AD64DBEA6E2FA002DD0E2833 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = HotHut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ching.HotHut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HotHut-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -489,10 +507,12 @@
 			baseConfigurationReference = F1B2E524822349823507C348 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = HotHut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ching.HotHut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HotHut-Bridging-Header.h";
 			};
 			name = Release;
 		};
