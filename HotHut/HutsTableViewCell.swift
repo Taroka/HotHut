@@ -17,6 +17,7 @@ class HutsTableViewCell: PFTableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
