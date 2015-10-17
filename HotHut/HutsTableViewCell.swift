@@ -47,7 +47,7 @@ class HutsTableViewCell: PFTableViewCell {
         hutPawIcon?.hidden = false
         hutPawIcon?.alpha = 1.0
         
-        UIView.animateWithDuration(1.0, delay: 1.0, options:nil, animations: {
+        UIView.animateWithDuration(1.0, delay: 1.0, options:[], animations: {
             
             self.hutPawIcon?.alpha = 0
             

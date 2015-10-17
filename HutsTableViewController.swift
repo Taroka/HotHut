@@ -51,18 +51,16 @@ class HutsTableViewController: PFQueryTableViewController {
         return query
     }
     
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
-
+        
         var cell:HutsTableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? HutsTableViewCell
         
         if(cell == nil) {
-            
-            cell?.parseObject = object
             cell = NSBundle.mainBundle().loadNibNamed("HutsTableViewCell", owner: self, options: nil)[0] as? HutsTableViewCell
         }
         
-        
-        
+        cell?.parseObject = object
         
         if let pfObject = object {
             cell?.hutNameLabel?.text = pfObject["name"] as? String
@@ -77,32 +75,31 @@ class HutsTableViewController: PFQueryTableViewController {
             if credit != nil {
                 cell?.hutCreditLabel?.text = "\(credit!) / CC 2.0"
             }
-        }
-        
-        cell?.hutImageView?.image = nil
-        if var urlString:String? = pFObject["url"] as? String {
-            var url:NSURL? = NSURL(string: urlString!)
             
-            if var url:NSURL? = NSURL(string: urlString!) {
-                var error:NSError?
-                var request:NSURLRequest = NSURLRequest(URL: url!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 5.0)
+            cell?.hutImageView?.image = nil
+            if var urlString:String? = pfObject["url"] as? String {
+                var url:NSURL? = NSURL(string: urlString!)
                 
-                NSOperationQueue.mainQueue().cancelAllOperations()
-                
-                NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {
-                    (response:NSURLResponse!, imageData:NSData!, error:NSError!) -> Void in
+                if var url:NSURL? = NSURL(string: urlString!) {
+                    var error:NSError?
+                    var request:NSURLRequest = NSURLRequest(URL: url!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 5.0)
                     
-                    (cell?.hutImageView?.image = UIImage(data: imageData))!
+                    NSOperationQueue.mainQueue().cancelAllOperations()
                     
-                })
+                    NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {
+                        (response:NSURLResponse!, imageData:NSData!, error:NSError!) -> Void in
+                        
+                        (cell?.hutImageView?.image = UIImage(data: imageData))!
+                        
+                    })
+                }
             }
+            
         }
-
         
         return cell
-        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -112,7 +109,7 @@ class HutsTableViewController: PFQueryTableViewController {
     /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // In a storyboard-based applihution, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
