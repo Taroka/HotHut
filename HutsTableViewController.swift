@@ -87,9 +87,9 @@ class HutsTableViewController: PFQueryTableViewController {
                     NSOperationQueue.mainQueue().cancelAllOperations()
                     
                     NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {
-                        (response:NSURLResponse!, imageData:NSData!, error:NSError!) -> Void in
+                        (response:NSURLResponse?, imageData:NSData?, error:NSError?) -> Void in
                         
-                        (cell?.hutImageView?.image = UIImage(data: imageData))!
+                        (cell?.hutImageView?.image = UIImage(data: imageData!))!
                         
                     })
                 }
